@@ -1,0 +1,25 @@
+
+.main-with-hide-bloc .widget{
+	width: 80%;;
+}
+.main-with-hide-bloc .widget .bloc-show p{
+	text-align:left;
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: middle;}
+.main-with-hide-bloc .widget a{
+	color: rgba(120,120,120,1);}
+.main-with-hide-bloc .widget .bloc-show img{
+	width: 30px;
+	margin-top:10px;
+	cursor:pointer;}
+.main-with-hide-bloc .widget .bloc-hide,.widget .bloc-show{
+	margin:10px;}
+.main-with-hide-bloc .widget .bloc-hide{
+	display: none;
+	text-align:justify;}
+.main-with-hide-bloc .widget .bloc-hide ul{
+	list-style:circle ;
+	margin: 15px;}
+.main-with-hide-bloc .widget .bloc-hide ul li{
+	margin:2px;}

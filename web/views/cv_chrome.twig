@@ -1,0 +1,381 @@
+{# web/views/cv_chrome.twig #}
+
+<!DOCTYPE HTML>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Le curriculum vitae de Florian Perrot">
+	<meta name="keywords" content="curriculum vitae,cv,florian, perrot, florian perrot">
+	<meta name="author" content="Florian Perrot">
+    <meta name="viewport" content="width=520" />
+    
+    <title>- Florian Perrot -</title>
+	
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin"> 
+	
+
+    <link rel="stylesheet" href="{{ asset('/views/css/init.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/views/css/layout_chrome.css') }}" type="text/css" />
+    
+    <link rel="stylesheet" href="{{ asset('/views/css/main_with_hide_bloc.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/views/css/main_with_round.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/views/css/main_with_simple_bloc.css') }}" type="text/css" />
+    
+    <script type="text/javascript" src="{{ asset('/views/js/jquery-2.1.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/views/js/functions_chrome.js') }}"></script>
+   
+    <script type="text/javascript" src="{{ asset('/views/js/jquery.transform2d.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/views/js/jquery.appear.js') }}"></script>
+    
+    <script type="text/javascript">
+
+		jQuery(function(){
+
+			defPath("{{ asset('') }}");
+			
+			initSize();
+			
+			$( window ).resize(function() {
+				initSize();
+			});
+			
+			convEmail()
+			jauges();
+			$(".sous-text p").each(function(){
+				centreVerticale($(this));
+			});
+			
+    		$("menu, main, footer").css("display","block");
+
+    		
+    		$("menu ul a").each(function(){
+    			animButtonMenu($(this));
+
+    			$(this).click(function(){
+    				$("html,body").animate({scrollTop: $($(this).attr("data")).offset().top},"slow");
+        			//$display_elem = $($(this).attr("data"));
+        			//animAfficheTextBloc();
+        		});
+        	});
+        	
+        	$("menu ul > img").click(function(){
+				
+				if($(this).hasClass("moveBottom"))
+	        		$("html,body").animate({scrollTop: $("footer").offset().top},"slow");
+				else
+	        		$("html,body").animate({scrollTop: 0},"slow");
+    	
+       		});
+       		
+        	$(".main-with-hide-bloc").each(function(){
+        		var container = $(this);
+        		$(this).find(".widget").each(function(){
+        			var windows = $(this).find(".bloc-hide");
+        			bindButton($(this).find(".buttonOC"),windows,
+        			function(){}
+        			);
+        		});
+        	});   		
+    		
+    		$("footer").appear();
+    		$("footer").on("appear",function(){
+        		if($( window ).width() >= 1024)
+        			$("menu ul > img").animate({marginTop:"50px",transform: 'rotate(180deg)'},"slow")
+        			.addClass("moveTop").removeClass("moveBottom");
+    		})
+    		$("footer").on("disappear",function(){
+        		if($( window ).width() >= 1024)
+        			$("menu ul > img").animate({marginTop:"10px",transform: 'rotate(0deg)'},"slow")
+        			.addClass("moveBottom").removeClass("moveTop");
+    		})
+        	
+
+    	});
+    </script>
+  </head>
+
+  <body >
+  	<noscript>
+	    <p style="text-align:center;margin-top:20%;">
+		Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.<br/>
+		Voici les <a href="http://www.enable-javascript.com/fr/" target="_blank">
+		instructions pour activer JavaScript dans votre navigateur Web</a>.
+		</p>
+	</noscript>
+  	<menu>		
+		<h1 class="name">Florian Perrot</h1>	
+		<ul class="menu">
+			<a data="#informations"><img src="{{ asset('/views/img/informations.svg') }}" alt="informations"><p><span>Informations</span></span></p></a>
+			<hr/>
+			<a data="#formations"><img src="{{ asset('/views/img/diplome.svg') }}" alt="diplôme"><p><span>Formations</span></p></a>
+			<a data="#competences"><img src="{{ asset('/views/img/cerveau.svg') }}" alt="cerveau"><p><span>Compétences</span></p></a>
+			<a data="#experiences"><img src="{{ asset('/views/img/experiences.svg') }}" alt="expériences"><p><span>Expériences</span></p></a>
+			<hr/>
+			<a data="#loisirs"><img src="{{ asset('/views/img/jeu.svg') }}" alt="jeu"><p><span>Loisirs</span></p></a>
+			<img class="moveBottom" src="{{ asset('/views/img/fleche_bas.svg') }}" alt="diplôme">
+		</ul>
+		<h3> " Simple comme un Curriculum vitae "</h3>
+	</menu>
+
+	<main>
+		
+		<div id="informations" class="bloc-text main-with-simple-bloc">
+			<h1>Informations</h1>
+			<div class="widget">
+				<h3>Divers</h3>
+				<ul>
+					<li><p>Âge : {{ age }} ans</p></li>
+					<li><p>Permis B</p></li>
+					<li>Célibataire</li>
+				</ul>
+			</div>
+			<div class="widget">
+				<h3>Pour me contacter</h3>
+				<ul>
+					<li><p>Adresse : Les Drilles, 26120 Chabeuil</p></li>
+					<li><p><span class="text-icon">Téléphone : <span> 06.23.83.79.00</span></span></p></li>
+					<li><p><span class="text-icon">Email : <a class="link-courriel" href="mailto:contact at florian-perrot.fr"><span class="text-courriel">contact at florian-perrot.fr</span></a></span></p>
+					<p><span id="more-20"></span></p></li>
+				</ul>
+			</div>
+		</div>	
+		
+		<div id="formations" class="bloc-text main-with-hide-bloc">
+			<h1>Formations</h1>
+			<div class="widget">
+				<div class="bloc-show">
+					<p>2011-2013</p>
+					<p><strong>DUT informatique</strong><br/>Module complémenaire informatique embarquée</p>
+					<p>IUT Valence, VALENCE (26)</p>
+					<p><img class="buttonOC" alt="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
+				</div>
+				<div class="bloc-hide">
+					<hr color="white"/>
+					<h4>Que'est ce que ça m'a apporté ?</h4>
+					<p>Grâce aux divers enseignements proposés j'ai pu me faire une image plus réelle de ce qu'ai
+					l'informatique en milieu professionnel. L'apprentissage des méthodologies comme 
+					le génie logiciel est une étape obligatoire afin de	travailler efficacement en équipe.
+					<br/>
+					<ul><li>Projet en équipe : Mise en place d'un système embarqué (sur Arduino) afin d'orienter une antenne
+					en fonction de données GPS.</li>
+					<li>Stage de fin d'année : Réalisation d'un site Internet pour l'association
+					Culture & Cultures ( <a href="http://asso-cultureetcultures.com/">Site</a> )</li></ul>
+					</p>
+				</div>
+			</div>
+		
+			<div class="widget">
+				<div class="bloc-show">	
+					<p>2009-2011</p>
+					<p><strong>Bac STI</strong><br/>Option génie électonique</p>
+					<p>Saint-Louis, CREST (26)</p>
+					<p><img class="buttonOC" atr="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
+				</div>
+				<div class="bloc-hide">
+					<hr color="white"/>
+					<h4>Que'est ce que ça m'a apporté ?</h4>
+					<p>Lors de ma 1er et terminale j'ai pu acquérir de multiples compétences
+					dans la mécanique, physique, mais surtout l'électronique.</p>
+					
+					<ul>
+						<li>Mécanique des mouvements et des forces</li>
+						<li>Physique appliquée et des composants électroniques</li>
+						<li>Électronique, de la simple résistance à la programmation
+							sur Microcontrôleur</li>
+					</ul>
+					
+					<p>En fin de cursus j'ai réalisé un spot lumineux à LED sur lequel on 
+					contrôle l'orientation et la couleur.</p>
+					 
+					<br/>
+					<h4>Pourqoi le Bac STI ?</h4>
+					<p>C'est après une 2nde générale que je me suis orienté vers un domaine qui
+					me passionne depuis tout petit, la technologie et plus particulièrement l'électronique.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="competences" class="bloc-text main-with-round">
+			<h1>Compétences</h1>
+			<div class="widget">
+				<h3>Linguistique</h3>
+				<div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="40" value="Anglais"/><div class="sous-text">
+					<p>
+	    			 Écrite : B1<br/>
+	   				 Orale : A2<br/>
+					</p></div></div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="10" value="Espagnol"/></div>
+				</div>
+			</div>
+			<div class="widget">
+				<h3>Management</h3>
+				<div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="100" value="MVC"/><div class="sous-text">
+					<p>
+					<b>M</b>odèle <b>V</b>ue <b>C</b>ontrôleur
+					</p></div></div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Génie log"/><div class="sous-text">
+					<p>
+					Génie Logiciel:<br/>
+					Merise et UML
+					</p></div></div><br/>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="60" value="POO"/><div class="sous-text">
+					<p>
+					<b>P</b>rogrammation <b>O</b>rientée <b>O</b>bjet
+					</p></div></div>
+				</div>
+			</div>
+			<div class="widget">
+				<h3>Informatique</h3>
+				<ul>
+					<li class="sous-competences">
+						<h4>Développement Web</h3>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="85" value="HTML/CSS"/><div class="sous-text">
+						<p>
+							Maîtrise  de l'HMTL5 et CSS3
+						</p></div></div>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="75" value="JS/JQuery"/></div>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="55" value="PHP"/><div class="sous-text">
+						<p>
+							Orientée objet
+							Symfony & Silex
+						</p></div></div>
+					</li>
+					<li class="sous-competences">
+						<h4>Outils de développement logiciels</h3>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Python"/></div>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="50" value="Java"/></div>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="30" value="C/C++"/><div class="sous-text">
+						<p>
+						Dév sur système embarqué
+						</p></div></div><br/>
+						<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="88" value="VBA"/><div class="sous-text">
+						<p>
+						Visual Basic<br/>
+						sur Excel
+						</p></div></div>
+					</li>
+				</ul>
+			</div>
+			<div class="widget">
+				<h3>Système d'expoitation</h3>
+				<div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="80" value="Linux"/></div>
+					<div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Windows"/></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="experiences" class="bloc-text main-with-hide-bloc">
+			<h1>Expériences</h1>
+			<div class="widget">
+				<div class="bloc-show">
+					<p>2013-2014</p>
+					<p>CDD</p>
+					<p><strong>Technicien en informatique</strong><br/>Association Cultue & Cultures</p>
+					<p>GRANE (26400)</p>
+					<p><img class="buttonOC" alt="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
+				</div>
+				<div class="bloc-hide">
+					<hr color="white"/>
+					
+					<h4>Que'est ce que ça m'a apporté ?</h4>
+					<p>J'ai cumulé plusieurs CDD durant l'année 2013/2014 au sein de l'association Culture & Cultures.
+					L'association gagnant en importance elle a eu besoin de s'informatiser ( Équipement internet, Logiciel 
+					de comptabilité, planification de tâche sur excel, création d'itinéraire sur google map, etc... ).</br>
+					Mon rôle dans un premier tant fût de mettre en place un réseau et de répondre aux besoins des employés
+					puis la réalisation de DVD photos des séjours.
+					</p>
+				</div>
+			</div>
+			
+			<div class="widget">
+				<div class="bloc-show">	
+					<p>Avril-Juin 2013</p>
+					<p>Stage</p>
+					<p><strong>Webmester</strong><br/>Association Cultue & Cultures</p>
+					<p>GRANE (26400)</p>
+					<p><img class="buttonOC" atr="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
+				</div>
+				<div class="bloc-hide">
+					<hr color="white"/>
+					
+					<h4>Qui sont-ils ?</h4>
+					<p>L'association Culture & Cultures a été fondée afin de permettre à des handicapés de touts âges de
+					partir en vacances, de ce fait elle emploie régulièrement des accompagnateurs spécialisés.
+					<br/>
+					<ul>
+					<li>Association de tourisme à but non lucrtif</li>
+					<li>Nombre d'employés : 6 temps plein</li> 
+					</ul></p>
+					
+					<h4>Que'est ce que ça m'a apporté ?</h4>
+					<p>Ce stage m'a permis de mettre en pratique ce que j'ai appris durant mes deux années à l'IUT.
+					N'ayant pas de consigne, j'ai dû réaliser un cahier des charges et proposer des fonctionnalités ainsi 
+					qu'une charte graphique.<br/><br/>
+					Lien vers le <a href="http://asso-cultureetcultures.com/">Site</a></p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="loisirs" class="bloc-text main-with-simple-bloc">
+			<h1>Loisirs</h1>
+			<div class="widget">
+				<img class="ico-widget" alt="engrenage" src="{{ asset('/views/img/engrenage.png') }}">
+				<h3>Technologie</h3>
+				<p> Passion pour l'informatique, l'électronique et les nouvelles technologies. </p>
+			</div>
+			<div class="widget">
+				<img class="ico-widget" alt="note de musique" src="{{ asset('/views/img/note_musique.png') }}">
+				<h3>Musique</h3>
+				<p> <b>Heavy metal</b> (power metal, metal symphonique et folk metal) et <b>rock indépendant</b> à travers des radios web</p>
+			</div>
+			<div class="widget">
+				<img class="ico-widget" alt="note de musique" src="{{ asset('/views/img/cinema.png') }}">
+				<h3>Cinéma</h3>
+				<p> Films d'<b>horreur</b> de George Andrew Romero, films d'<b>animation</b> de Hayao Miyazaki.<br/>
+				Ainsi que les films	réalisés par <b>la nouvelle vague sud-coréenne</b> comme Chan-wook Park et Joon-ho Bong </p>
+			</div>
+		</div>
+		<span></span>
+	</main>
+
+	<footer>
+		<div id="top-footer">
+			<ul><li><a href="{{ asset('/docs/CV_19_06_2014.pdf') }}">Télécharger le CV</a></li></ul>
+			<hr/>
+			<p>florian-perrot.fr réaslisé par ... Florian Perrot ! <br/>
+			&copy;2014{% if '2014' < "now"|date('Y') %}-{{"now"|date('Y')}}{% endif %}, tous droits réservés.<br/>
+			</p>
+		</div>
+		<div class="sub-bloc">
+			<div class="widget">
+				<h3>Exigences d'attribution</h3>
+				<p>
+				Le symbole du diplôme par icons8, la flèche par Jamison Wieser, l'homme d'affaire par Valera  Nazarov, TicTacToe par TNS, le "i" de information par Arthur Shlain et le cerveau par Marek Polakovic. 
+				<br/><br/>
+				Vous pourrez retrouver ces icons sur le site <a href="http://thenounproject.com/">Noun Project</a><br/>
+				</p>
+			</div>
+			<div class="widget">
+				<h3>Hébergeur</h3>
+				<p>Site hébergé chez <a href="http://www.ovh.com">OVH</a><br/>
+				SAS au capital de 10 000 000 €<br/>
+				RCS Roubaix – Tourcoing 424 761 419 00045<br/>
+				Code APE 6202A<br/>
+				N° TVA : FR 22 424 761 419<br/>
+				Siège social : 2 rue Kellermann - 59100 Roubaix - France.
+				</p>
+			</div>
+			<div class="widget">
+				<h3>Mentions légales</h3>
+				<p>L'ensemble de ce site relève des législations françaises et internationales sur le droit 
+				d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés,
+				y compris pour les documents iconographiques et photographiques. </p>
+			</div>
+		</div>
+	</footer>
+
+	</body>
+</html>

@@ -1,0 +1,63 @@
+.main-with-round .widget{
+	vertical-align: middle;
+	display: inline-block;
+	width: 400px;
+	padding: 20px;}
+.main-with-round .widget input{
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: white;}
+.main-with-round .widget div.round {
+  margin-bottom: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+  width: 100px;
+  height: 75px;
+  position: relative;
+  display:inline-block;}
+.main-with-round .widget div.round input {
+  position: absolute;
+  top: 35px;
+  left: 18px;
+  text-align: center;
+  width: 65px;
+  border: none;
+  background: none;
+  outline: none;}
+.main-with-round .widget div.round canvas {
+	z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;}
+.main-with-round .widget div.round img {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;}
+.main-with-round .widget div.round .sous-text{
+	z-index: 2;
+	position: absolute;
+	width: 100px;
+    height: 100px;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.8);
+	visibility: hidden;}
+.main-with-round .widget div.round .sous-text p{
+	font-size: 13px;
+	width: 100px;
+	text-align: center;}
+.main-with-round .widget div.round .sous-text b{
+	color: #557CBF;}
+.main-with-round .widget ul li{
+	list-style:circle;}
+.main-with-round .sous-competences{
+	text-align: left;}
