@@ -9,7 +9,7 @@ Blog/CV:
 - Coloré
 
 
-Partie CV (Encore de dévloppement)
+Partie CV (Développement en cours)
 -
 - Forme identique au CV Papier avec en plus quelques explications facultative pour le visiteur
 - Wirefrime Simple
