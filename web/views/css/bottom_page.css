@@ -8,7 +8,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  background: rgba(104, 255, 185, 0.95); }
+  background: rgba(207, 232, 211, 0.95); }
   .menu ul {
     padding: 0px; }
     .menu ul li {
@@ -27,12 +27,16 @@ main {
     margin: 15px;
     padding: 5px;
     text-align: justify;
-    max-width: 900px;
+    max-width: 550px;
     display: inline-block; }
     main .bloc-article .image {
       text-align: center;
       float: right;
-      margin-left: 10px; }
+      margin-left: 10px;
+      max-width: 300px;
+      max-height: 400px; }
+      main .bloc-article .image img {
+        border: black solid 1px; }
     main .bloc-article h2 {
       display: inline;
       position: relative;
@@ -48,15 +52,19 @@ main {
     background-color: rgba(150, 150, 150, 0.7); }
 
 footer {
-  padding: 20px 0;
+  padding: 170px 0;
   z-index: 2;
   color: #54551a;
-  background: #e3d93c;
+  background: #e5644e url("/florian-perrot/views/img/footer-back.jpg") no-repeat;
+  background-size: 100%;
   position: absolute;
   height: 100%;
   width: 100%;
   text-align: center; }
+  footer h3 {
+    font-size: 1em; }
   footer p {
+    font-size: 0.7em;
     margin: 5px;
     padding: 5px;
     text-align: justify;
