@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu"), url(http://fonts.gstatic.com/s/ubuntu/v7/_xyN3apAT_yRRDeqB3sPRg.woff) format("woff"); }
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Ubuntu Bold"), local("Ubuntu-Bold"), url(http://fonts.gstatic.com/s/ubuntu/v7/0ihfXUL2emPh0ROJezvraD8E0i7KZn-EPnyo3HZu7kw.woff) format("woff"); }
+@font-face {
+  font-family: "OrangeJuice";
+  font-style: normal;
+  src: url("/florian-perrot/views/orange_juice.ttf"); }
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), url(http://fonts.gstatic.com/s/raleway/v9/IczWvq5y_Cwwv_rBjOtT0w.woff) format("woff"); }
+body {
+  background: url("/florian-perrot/views/img/back.jpg") no-repeat, url("/florian-perrot/views/img/back-moz.jpg");
+  background-size: 100%; }
+
+/*# sourceMappingURL=base.css.map */

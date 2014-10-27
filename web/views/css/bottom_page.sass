@@ -1,0 +1,70 @@
+@font-face
+  font-family: 'OrangeJuice'
+  font-style: normal
+  src:  url("/florian-perrot/views/orange_juice.ttf")
+
+.menu
+  z-index: 5
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  background: rgba(104, 255, 185, 0.95)
+  ul
+    padding: 0px
+    li
+      display: inline-block
+      margin: 20px 30px
+      font-family: "OrangeJuice",Arial,serif
+      font-size: 3em
+      a
+        cursor: pointer
+      a:hover
+        color: #f49277
+
+main
+  text-align: center
+  .bloc-article
+    margin: 15px
+    padding: 5px
+
+    text-align: justify
+    max-width: 900px
+    display: inline-block
+    .image
+      text-align: center
+      float: right
+      margin-left: 10px
+    h2
+      display: inline
+      position: relative
+      top: -20px
+      left: -20px
+      padding: 5px 10px
+      border-radius: 25px
+    h2
+      background-color: rgba(255,255,255,1)
+
+
+  .bloc-article:nth-child(odd)
+    background-color: rgba(255,255,255,0.7)
+  .bloc-article:nth-child(even)
+    background-color: rgba(150,150,150,0.7)
+
+footer
+  padding: 20px 0
+  z-index: 2
+  color: #54551a
+  background: #e3d93c
+  position: absolute
+  height: 100%
+  width: 100%
+  text-align: center
+
+  p
+    margin: 5px
+    padding: 5px
+    text-align: justify
+    display: inline-block
+    width: 320px
+    background: rgba(255,255,255,0.8)

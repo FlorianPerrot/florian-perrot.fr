@@ -9,18 +9,20 @@
     <meta name="description" content="Le curriculum vitae de Florian Perrot">
     <meta name="keywords" content="curriculum vitae,cv,florian, perrot, florian perrot">
     <meta name="author" content="Florian Perrot">
-    <meta name="viewport" content="width=520" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{{ asset('/views/css/knacss.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/views/css/base.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/views/css/top_page.css') }}" type="text/css" />
+
 
     <title>Florian Perrot</title>
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-
-    <link rel="stylesheet" href="{{ asset('/views/css/base.css') }}" type="text/css" />
 </head>
 
 <body >
 
-    <noscript>
+    <noscript id="noscript">
         <p style="text-align:center;margin-top:20%;">
             Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.<br/>
             Voici les <a href="http://www.enable-javascript.com/fr/" target="_blank">
@@ -28,291 +30,80 @@
         </p>
     </noscript>
 
-    <menu>
-        <h1 class="name">Florian Perrot</h1>
-        <ul class="menu">
-            <a data="#informations">
-                <img src="{{ asset('/views/img/informations.svg') }}" alt="informations">
-                <p><span>Informations</span></p></a>
-            <hr/>
-            <a data="#formations"><img src="{{ asset('/views/img/diplome.svg') }}" alt="diplôme"><p><span>Formations</span></p></a>
-            <a data="#competences"><img src="{{ asset('/views/img/cerveau.svg') }}" alt="cerveau"><p><span>Compétences</span></p></a>
-            <a data="#experiences"><img src="{{ asset('/views/img/experiences.svg') }}" alt="expériences"><p><span>Expériences</span></p></a>
-            <hr/>
-            <a data="#loisirs"><img src="{{ asset('/views/img/jeu.svg') }}" alt="jeu"><p><span>Loisirs</span></p></a>
-            <img class="moveBottom" src="{{ asset('/views/img/fleche_bas.svg') }}" alt="diplôme">
-        </ul>
-        <h3> " Simple comme un Curriculum vitae "</h3>
-    </menu>
+    <header>
+        <a class="display-menu">
+            <svg class="param" xml:space="preserve" enable-background="new 0 0 24 24" viewBox="0 0 24 24"  height="24px" width="24px" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Ebene_1" version="1.1">
+                <rect class="rect1" height="2" width="34" y="5"/>
+                <rect class="rect2" height="2" width="34" y="11"/>
+                <rect class="rect3" height="2" width="34" y="17"/>
+            </svg>
+
+        </a>
+
+        <div class="menu">
+            <ul>
+                <li><a>Portfolio</a></li>
+                <li class="separation">-</li>
+                <li><a>Blog</a></li>
+                <li class="separation">-</li>
+                <li><a>CV</a></li>
+            </ul>
+        </div>
+        <h1 class="titre-header">Bonjour, je suis <br/><span>Florian Perrot</span></h1>
+
+    </header>
 
     <main>
-
-    <div id="informations" class="bloc-text main-with-simple-bloc">
-        <h1>Informations</h1>
-        <div class="widget">
-            <h3>Divers</h3>
-            <ul>
-                <li><p>Âge : {{ age }} ans</p></li>
-                <li><p>Permis B</p></li>
-                <li>Célibataire</li>
-            </ul>
-        </div>
-        <div class="widget">
-            <h3>Pour me contacter</h3>
-            <ul>
-                <li><p>Adresse : Les Drilles, 26120 Chabeuil</p></li>
-                <li><p><span class="text-icon">Téléphone : <span> 06.23.83.79.00</span></span></p></li>
-                <li><p><span class="text-icon">Email : <a class="link-courriel" href="mailto:contact at florian-perrot.fr"><span class="text-courriel">contact at florian-perrot.fr</span></a></span></p>
-                    <p><span id="more-20"></span></p></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="formations" class="bloc-text main-with-hide-bloc">
-        <h1>Formations</h1>
-        <div class="widget">
-            <div class="bloc-show">
-                <p>2011-2013</p>
-                <p><strong>DUT informatique</strong><br/>Module complémenaire informatique embarquée</p>
-                <p>IUT Valence, VALENCE (26)</p>
-                <p><img class="buttonOC" alt="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
-            </div>
-            <div class="bloc-hide">
-                <hr color="white"/>
-                <h4>Que'est ce que ça m'a apporté ?</h4>
-                <p>Grâce aux divers enseignements proposés j'ai pu me faire une image plus réelle de ce qu'ai
-                    l'informatique en milieu professionnel. L'apprentissage des méthodologies comme
-                    le génie logiciel est une étape obligatoire afin de	travailler efficacement en équipe.
-                    <br/>
-                <ul><li>Projet en équipe : Mise en place d'un système embarqué (sur Arduino) afin d'orienter une antenne
-                        en fonction de données GPS.</li>
-                    <li>Stage de fin d'année : Réalisation d'un site Internet pour l'association
-                        Culture & Cultures ( <a href="http://asso-cultureetcultures.com/">Site</a> )</li></ul>
-                </p>
-            </div>
-        </div>
-
-        <div class="widget">
-            <div class="bloc-show">
-                <p>2009-2011</p>
-                <p><strong>Bac STI</strong><br/>Option génie électonique</p>
-                <p>Saint-Louis, CREST (26)</p>
-                <p><img class="buttonOC" atr="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
-            </div>
-            <div class="bloc-hide">
-                <hr color="white"/>
-                <h4>Que'est ce que ça m'a apporté ?</h4>
-                <p>Lors de ma 1er et terminale j'ai pu acquérir de multiples compétences
-                    dans la mécanique, physique, mais surtout l'électronique.</p>
-
-                <ul>
-                    <li>Mécanique des mouvements et des forces</li>
-                    <li>Physique appliquée et des composants électroniques</li>
-                    <li>Électronique, de la simple résistance à la programmation
-                        sur Microcontrôleur</li>
-                </ul>
-
-                <p>En fin de cursus j'ai réalisé un spot lumineux à LED sur lequel on
-                    contrôle l'orientation et la couleur.</p>
-
-                <br/>
-                <h4>Pourqoi le Bac STI ?</h4>
-                <p>C'est après une 2nde générale que je me suis orienté vers un domaine qui
-                    me passionne depuis tout petit, la technologie et plus particulièrement l'électronique.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="competences" class="bloc-text main-with-round">
-        <h1>Compétences</h1>
-        <div class="widget">
-            <h3>Linguistique</h3>
-            <div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="40" value="Anglais"/><div class="sous-text">
-                        <p>
-                            Écrite : B1<br/>
-                            Orale : A2<br/>
-                        </p></div></div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="10" value="Espagnol"/></div>
-            </div>
-        </div>
-        <div class="widget">
-            <h3>Management</h3>
-            <div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="100" value="MVC"/><div class="sous-text">
-                        <p>
-                            <b>M</b>odèle <b>V</b>ue <b>C</b>ontrôleur
-                        </p></div></div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Génie log"/><div class="sous-text">
-                        <p>
-                            Génie Logiciel:<br/>
-                            Merise et UML
-                        </p></div></div><br/>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="60" value="POO"/><div class="sous-text">
-                        <p>
-                            <b>P</b>rogrammation <b>O</b>rientée <b>O</b>bjet
-                        </p></div></div>
-            </div>
-        </div>
-        <div class="widget">
-            <h3>Informatique</h3>
-            <ul>
-                <li class="sous-competences">
-                    <h4>Développement Web</h4>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="85" value="HTML/CSS"/><div class="sous-text">
-                                <p>
-                                    Maîtrise  de l'HMTL5 et CSS3
-                                </p></div></div>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="75" value="JS/JQuery"/></div>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="55" value="PHP"/><div class="sous-text">
-                                <p>
-                                    Orientée objet
-                                    Symfony & Silex
-                                </p></div></div>
-                </li>
-                <li class="sous-competences">
-                    <h4>Outils de développement logiciels</h4>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Python"/></div>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="50" value="Java"/></div>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="30" value="C/C++"/><div class="sous-text">
-                                <p>
-                                    Dév sur système embarqué
-                                </p></div></div><br/>
-                        <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="88" value="VBA"/><div class="sous-text">
-                                <p>
-                                    Visual Basic<br/>
-                                    sur Excel
-                                </p></div></div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="widget">
-            <h3>Système d'expoitation</h3>
-            <div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="80" value="Linux"/></div>
-                <div class="round"><input type="text" name="round" class="round" data-min="0" data-max="100" data-value="70" value="Windows"/></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="experiences" class="bloc-text main-with-hide-bloc">
-        <h1>Expériences</h1>
-        <div class="widget">
-            <div class="bloc-show">
-                <p>2013-2014</p>
-                <p>CDD</p>
-                <p><strong>Technicien en informatique</strong><br/>Association Cultue & Cultures</p>
-                <p>GRANE (26400)</p>
-                <p><img class="buttonOC" alt="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
-            </div>
-            <div class="bloc-hide">
-                <hr color="white"/>
-
-                <h4>Que'est ce que ça m'a apporté ?</h4>
-                <p>J'ai cumulé plusieurs CDD durant l'année 2013/2014 au sein de l'association Culture & Cultures.
-                    L'association gagnant en importance elle a eu besoin de s'informatiser ( Équipement internet, Logiciel
-                    de comptabilité, planification de tâche sur excel, création d'itinéraire sur google map, etc... ).</br>
-                    Mon rôle dans un premier tant fût de mettre en place un réseau et de répondre aux besoins des employés
-                    puis la réalisation de DVD photos des séjours.
-                </p>
-            </div>
-        </div>
-
-        <div class="widget">
-            <div class="bloc-show">
-                <p>Avril-Juin 2013</p>
-                <p>Stage</p>
-                <p><strong>Webmester</strong><br/>Association Cultue & Cultures</p>
-                <p>GRANE (26400)</p>
-                <p><img class="buttonOC" atr="ouvre ou ferme du contenu" src="{{ asset('/views/img/fleche_bas.png') }}"/></p>
-            </div>
-            <div class="bloc-hide">
-                <hr color="white"/>
-
-                <h4>Qui sont-ils ?</h4>
-                <p>L'association Culture & Cultures a été fondée afin de permettre à des handicapés de touts âges de
-                    partir en vacances, de ce fait elle emploie régulièrement des accompagnateurs spécialisés.
-                    <br/>
-                <ul>
-                    <li>Association de tourisme à but non lucrtif</li>
-                    <li>Nombre d'employés : 6 temps plein</li>
-                </ul></p>
-
-                <h4>Que'est ce que ça m'a apporté ?</h4>
-                <p>Ce stage m'a permis de mettre en pratique ce que j'ai appris durant mes deux années à l'IUT.
-                    N'ayant pas de consigne, j'ai dû réaliser un cahier des charges et proposer des fonctionnalités ainsi
-                    qu'une charte graphique.<br/><br/>
-                    Lien vers le <a href="http://asso-cultureetcultures.com/">Site</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div id="loisirs" class="bloc-text main-with-simple-bloc">
-        <h1>Loisirs</h1>
-        <div class="widget">
-            <img class="ico-widget" alt="engrenage" src="{{ asset('/views/img/engrenage.png') }}">
-            <h3>Technologie</h3>
-            <p> Passion pour l'informatique, l'électronique et les nouvelles technologies. </p>
-        </div>
-        <div class="widget">
-            <img class="ico-widget" alt="note de musique" src="{{ asset('/views/img/note_musique.png') }}">
-            <h3>Musique</h3>
-            <p> <b>Heavy metal</b> (power metal, metal symphonique et folk metal) et <b>rock indépendant</b> à travers des radios web</p>
-        </div>
-        <div class="widget">
-            <img class="ico-widget" alt="note de musique" src="{{ asset('/views/img/cinema.png') }}">
-            <h3>Cinéma</h3>
-            <p> Films d'<b>horreur</b> de George Andrew Romero, films d'<b>animation</b> de Hayao Miyazaki.<br/>
-                Ainsi que les films	réalisés par <b>la nouvelle vague sud-coréenne</b> comme Chan-wook Park et Joon-ho Bong </p>
-        </div>
-    </div>
-    <span></span>
+        <div class="bloc-article"> <h2>Titre 1</h2> <div class="image"><img src="http://dummyimage.com/200/c2c2c2/000000.jpg" /></div> <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere </p></div>
+        <div class="bloc-article"> <h2>Titre 2</h2> <div class="image"><img src="http://dummyimage.com/200/c2c2c2/000000.jpg" /></div> <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere </p></div>
+        <div class="bloc-article"> <h2>Titre 3</h2> <div class="image"><img src="http://dummyimage.com/200/c2c2c2/000000.jpg" /></div> <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere </p></div>
     </main>
 
     <footer>
-        <div id="top-footer">
-            <ul><li><a href="{{ asset('/docs/CV_19_06_2014.pdf') }}">Télécharger le CV</a></li></ul>
-            <hr/>
-            <p>florian-perrot.fr réaslisé par ... Florian Perrot ! <br/>
-                &copy;2014{% if '2014' < "now"|date('Y') %}-{{"now"|date('Y')}}{% endif %}, tous droits réservés.<br/>
-            </p>
-        </div>
-        <div class="sub-bloc">
-            <div class="widget">
-                <h3>Exigences d'attribution</h3>
-                <p>
-                    Le symbole du diplôme par icons8, la flèche par Jamison Wieser, l'homme d'affaire par Valera  Nazarov, TicTacToe par TNS, le "i" de information par Arthur Shlain et le cerveau par Marek Polakovic.
-                    <br/><br/>
-                    Vous pourrez retrouver ces icons sur le site <a href="http://thenounproject.com/">Noun Project</a><br/>
-                </p>
-            </div>
-            <div class="widget">
-                <h3>Hébergeur</h3>
-                <p>Site hébergé chez <a href="http://www.ovh.com">OVH</a><br/>
-                    SAS au capital de 10 000 000 €<br/>
-                    RCS Roubaix – Tourcoing 424 761 419 00045<br/>
-                    Code APE 6202A<br/>
-                    N° TVA : FR 22 424 761 419<br/>
-                    Siège social : 2 rue Kellermann - 59100 Roubaix - France.
-                </p>
-            </div>
-            <div class="widget">
-                <h3>Mentions légales</h3>
-                <p>L'ensemble de ce site relève des législations françaises et internationales sur le droit
-                    d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés,
-                    y compris pour les documents iconographiques et photographiques. </p>
-            </div>
+        <div class="widget">
+            <h3>Mentions légales</h3>
+            <svg class="param" xml:space="preserve" enable-background="new 0 0 24 24" viewBox="0 0 24 24"  height="24px" width="24px" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Ebene_1" version="1.1">
+                <rect height="2" width="33.94" transform="translate(1.41) rotate(45)"/>
+                <rect height="2" width="33.94" transform="translate(0 22.59) rotate(-45)"/>
+            </svg>
+            <p>L'ensemble de ce site relève des législations françaises et internationales sur le droit
+                d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés,
+                y compris pour les documents iconographiques et photographiques. </p>
         </div>
     </footer>
 
-    <script type="text/javascript" src="{{ asset('/views/js/jquery-2.1.0.min.js') }}"></script>
-    <script type="text/javascript">
-        jQuery(function(){
 
-        });
-    </script>
 
 </body>
 
 </html>
+
+
+
+<link rel="stylesheet" href="{{ asset('/views/css/bottom_page.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ asset('/views/css/other_screen.css') }}" type="text/css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    jQuery(function(){
+        $(".display-menu")
+                .click(function() {
+                    $menu = $(".menu");
+                    $display_menu = $(".display-menu");
+                    if ($menu.css("display") == "none"){
+                        $menu.slideDown();
+                    }
+                    else {
+                        $menu.slideUp();
+                    }
+                }
+        )
+                .hover(function(){
+                    $(".display-menu svg .rect1").attr("y","3px");
+                    $(".display-menu svg .rect3").attr("y","19px");
+                },function(){
+                    $(".display-menu svg .rect1").attr("y","4px");
+                    $(".display-menu svg .rect3").attr("y","17px");
+                });
+    });
+</script>
