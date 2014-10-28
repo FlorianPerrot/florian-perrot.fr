@@ -18,7 +18,12 @@
   font-weight: 400;
   src: local("Raleway"), url(http://fonts.gstatic.com/s/raleway/v9/IczWvq5y_Cwwv_rBjOtT0w.woff) format("woff"); }
 body {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   background: url("/florian-perrot/views/img/back.jpg") no-repeat, url("/florian-perrot/views/img/back-moz.jpg");
   background-size: 100%; }
+
+ul li {
+  margin-left: 25px;
+  list-style-type: none; }
 
 /*# sourceMappingURL=base.css.map */
